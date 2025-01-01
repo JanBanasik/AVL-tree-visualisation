@@ -2,7 +2,7 @@
 
 Visualizer::Visualizer(AVL* new_tree) : tree(new_tree)
 {
-    if (!font.loadFromFile("arial.ttf"))
+    if (!font.loadFromFile("C:/Users/jan_b/CLionProjects/drzewoavl/arial.ttf"))
     {
         throw std::runtime_error("Failed to load font");
     }

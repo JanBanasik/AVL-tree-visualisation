@@ -18,16 +18,28 @@ add_executable(ProjektC__WizualizajcaDrzew
         Visualizer.h
         Visualizer.cpp)
 
-# Dodaj nagłówki SFML (pewna ścieżka absolutna)
-target_include_directories(ProjektC__WizualizajcaDrzew PRIVATE
-        C:/Users/jan_b/SFML-2.5.1/include)
+# Włącz FetchContent
+include(FetchContent)
+set(BUILD_SHARED_LIBS OFF)
 
-# Dodaj ścieżki do bibliotek SFML
-target_link_directories(ProjektC__WizualizajcaDrzew PRIVATE
-        C:/Users/jan_b/SFML-2.5.1/lib)
+# Pobierz SFML
+FetchContent_Declare(
+        SFML
+        GIT_REPOSITORY https://github.com/SFML/SFML.git
+        GIT_TAG 2.5.1
+)
+FetchContent_MakeAvailable(SFML)
 
-# Linkowanie do SFML
-target_link_libraries(ProjektC__WizualizajcaDrzew
-        sfml-graphics
-        sfml-window
-        sfml-system)
+# Make sure SFML is built correctly
+if(TARGET sfml-graphics AND TARGET sfml-window AND TARGET sfml-system)
+    message(STATUS "SFML has been found and successfully built.")
+else()
+    message(FATAL_ERROR "SFML was not found!")
+endif()
+
+# Add SFML to your project
+target_link_libraries(ProjektC__WizualizajcaDrzew sfml-graphics sfml-window sfml-system)
+
+# Optionally set SFML include and library paths if needed (you should not need to do this if FetchContent works)
+target_include_directories(ProjektC__WizualizajcaDrzew PRIVATE ${SFML_INCLUDE_DIR})
+target_link_directories(ProjektC__WizualizajcaDrzew PRIVATE ${SFML_LIBRARY_DIR})

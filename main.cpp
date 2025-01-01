@@ -6,7 +6,7 @@
 void testAVLTree() {
     AVL* my_tree = new AVL();
 
-    std::vector<int> values = {10, 20, 30, 40, 50, 25,14,12,20,11,31,9};
+    std::vector<int> values = {10, 20, 30, 40, 50, 25,14,12,20,11,31,9, 39, 38};
     for (int value : values) {
         std::cout << "Inserting " << value << " into AVL tree...\n";
         my_tree->insert(value);

@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\ProjektC__WizualizajcaDrzew.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\ProjektC__WizualizajcaDrzew.dir/objects.a @CMakeFiles\ProjektC__WizualizajcaDrzew.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\ProjektC__WizualizajcaDrzew.dir/objects.a -Wl,--no-whole-archive -o ProjektC__WizualizajcaDrzew.exe -Wl,--out-implib,libProjektC__WizualizajcaDrzew.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ProjektC__WizualizajcaDrzew.dir\linkLibs.rsp
