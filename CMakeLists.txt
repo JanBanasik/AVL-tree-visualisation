@@ -1,21 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 project(ProjektC__WizualizajcaDrzew)
 
-include(FetchContent)
-set(BUILD_SHARED_LIBS OFF)
-FETCHCONTENT_DECLARE(SFML GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 2.5.1)
-FETCHCONTENT_MAKEAVAILABLE(SFML)
-
+# Ustawienia C++ 17
 set(CMAKE_CXX_STANDARD 17)
 
+# Dodaj pliki źródłowe i nagłówkowe
 add_executable(ProjektC__WizualizajcaDrzew
         main.cpp
         Tree.h
-        Tree.h
         BST.h
         AVL.h
-        AVL.h
-        Node.h
         Node.h
         Node.cpp
         BST.cpp
@@ -24,4 +18,16 @@ add_executable(ProjektC__WizualizajcaDrzew
         Visualizer.h
         Visualizer.cpp)
 
-target_link_libraries(ProjektC__WizualizajcaDrzew sfml-graphics)
+# Dodaj nagłówki SFML (pewna ścieżka absolutna)
+target_include_directories(ProjektC__WizualizajcaDrzew PRIVATE
+        C:/Users/jan_b/SFML-2.5.1/include)
+
+# Dodaj ścieżki do bibliotek SFML
+target_link_directories(ProjektC__WizualizajcaDrzew PRIVATE
+        C:/Users/jan_b/SFML-2.5.1/lib)
+
+# Linkowanie do SFML
+target_link_libraries(ProjektC__WizualizajcaDrzew
+        sfml-graphics
+        sfml-window
+        sfml-system)

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "AVL.h"
 #include "Visualizer.h"
+#include <vector>
 
 void testAVLTree() {
     AVL* my_tree = new AVL();
